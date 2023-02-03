@@ -1,0 +1,18 @@
+public static String timeConversion(String s) {
+    // Write your code here
+    int hourInt = Integer.parseInt(s.substring(0,2));
+        String time = s.substring(8);
+        boolean night = time.equals("PM");
+        if(night){
+            if(hourInt != 12){
+                hourInt += 12;
+                return "" + hourInt + s.substring(2,8);
+            }
+        } else{
+            if(hourInt == 12){ 
+                return "00" + s.substring(2,8);
+            }
+        }
+        return s.substring(0,8);
+    }
+}
